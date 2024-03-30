@@ -32,11 +32,13 @@ const Navbar = () => {
         </li>
       </ul>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <button className={styles.actionButton}>Button</button>
-        <div className={styles.placeholder}></div>
-        <button onClick={nextColorScheme}>Next Color Scheme</button>
-        <button className={styles.actionButton} onClick={toggleTheme}>
-          Toggle Theme
+        <button className={styles.actionButton}>Placeholder</button>
+        <button className={styles.placeholder}>✉️</button>
+        <button className={styles.placeholder} onClick={nextColorScheme}>
+          🎨
+        </button>
+        <button className={styles.placeholder} onClick={toggleTheme}>
+          🌙
         </button>
       </div>
     </nav>
