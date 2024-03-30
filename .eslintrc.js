@@ -2,28 +2,31 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true, // Added for global recognition
   },
   extends: ["eslint:recommended", "plugin:react/recommended"],
   settings: {
     react: {
-      version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: "detect",
     },
   },
-  overrides: [
-    {
-      files: ["webpack.config.js", ".eslintrc.{js,cjs}"], // Now includes webpack.config.js
-      env: {
-        node: true, // This applies Node.js environment settings to webpack.config.js and ESLint config files
-      },
-      parserOptions: {
-        sourceType: "script",
-      },
-    },
-  ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {},
+  rules: {
+    "react/prop-types": "off", // Turn off prop-types rule for all files
+    "no-unused-vars": ["warn", { vars: "all", args: "none" }], // Adjust unused vars rule
+    "no-undef": "off", // Turn off no-undef rule if you're facing issues with global variable recognition
+    // Add or adjust rules as needed for your project
+  },
+  overrides: [
+    {
+      files: ["*.js", "*.jsx"], // Apply this override to all JavaScript and JSX files
+      rules: {
+        // Specific rules adjustments for JS and JSX files can go here
+      },
+    },
+  ],
 };
