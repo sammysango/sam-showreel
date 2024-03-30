@@ -36,5 +36,6 @@ module.exports = {
     },
     compress: true,
     port: 9000, // Specify the port for the development server
+    historyApiFallback: true,
   },
 };
