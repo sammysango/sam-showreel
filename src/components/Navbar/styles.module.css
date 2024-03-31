@@ -97,7 +97,9 @@ body {
 }
 
 .actionButton:hover {
-  background-color: var(--highlight-color-1); /* Slightly darker shade on hover */
+  background-color: var(
+    --highlight-color-1
+  ); /* Slightly darker shade on hover */
   transform: scale(1.05); /* Slightly increase size on hover */
 }
 
@@ -149,4 +151,21 @@ body {
 
 .navbarIcon:hover .animatedIcon {
   opacity: 1; /* Fade in the animated icon */
+}
+
+.icon {
+  transition:
+    transform 0.3s ease,
+    opacity 0.1s ease;
+  transform-origin: -7px -5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iconHide {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
 }

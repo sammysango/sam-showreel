@@ -5,10 +5,11 @@ import styles from "./styles.module.css";
 import { ReactComponent as EmailIcon } from "../../assets/emailIcon.svg";
 import { ReactComponent as MoonIcon } from "../../assets/moonIcon.svg";
 import { ReactComponent as PaintIcon } from "../../assets/paintIcon.svg";
-import { ReactComponent as PaintIconAnim } from "../../assets/paintIconAnim.svg"; // Corrected typo
+import { ReactComponent as PaintIconAnim } from "../../assets/paintIconAnim.svg";
+import { ReactComponent as SunIcon } from "../../assets/sunIcon.svg";
 
 const Navbar = () => {
-  const { toggleTheme, nextColorScheme } = useTheme();
+  const { theme, toggleTheme, nextColorScheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -59,7 +60,12 @@ const Navbar = () => {
           </div>
         </button>
         <button className={styles.navbarIcon} onClick={toggleTheme}>
-          <MoonIcon />
+          <MoonIcon
+            className={`${styles.icon} ${theme === "dark" ? styles.iconHide : ""}`}
+          />
+          <SunIcon
+            className={`${styles.icon} ${theme === "light" ? styles.iconHide : ""}`}
+          />
         </button>
       </div>
     </nav>
