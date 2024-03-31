@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useTheme } from "./ThemeContext";
 import Navbar from "./components/Navbar/Navbar";
@@ -17,16 +18,18 @@ const App = () => {
   }, [theme, colorScheme]);
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div data-theme={theme} data-color-scheme={colorScheme}>
+      <Router basename={window.location.pathname}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </div>
   );
 };
 
