@@ -1,11 +1,25 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .navbar {
   display: flex;
   height: 60px;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  background-color: var(--highlight-color);
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Higher than other content */
+  transition:
+    height 0.3s ease-in-out,
+    padding 0.3s ease-in-out;
 }
 
 .navList {
@@ -13,6 +27,7 @@
   list-style: none;
   padding: 0;
   margin: 0; /* Ensure there's no default margin */
+  flex-grow: 1; /* Add this to allow the list to grow and occupy available space */
 }
 
 .navItem {
@@ -20,19 +35,29 @@
 }
 
 .navLink {
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
 }
 
 .brandName {
   font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevent the brand name from shrinking */
+  margin-right: 20px; /* Add right margin to create space */
+}
+
+.brandName,
+.navList {
+  padding: 10px 20px; /* Example original padding */
+  transition: padding 0.3s ease-in-out;
 }
 
 /* Adjustments for placeholders and button */
 .placeholder,
 .actionButton {
   display: inline-block; /* Display items inline */
-  margin-left: 10px; /* Space between items */
+  margin: 0 10px; /* Maintain spacing on the right */
+  transition: margin 0.3s ease-in-out;
 }
 
 .placeholder {
@@ -43,10 +68,29 @@
 }
 
 .actionButton {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--text-color);
+  color: var(--background-color);
   border: none;
-  border-radius: 5px;
+  border-radius: 999px; /* Ensures fully rounded corners */
   padding: 10px 15px;
   cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Optional: Add a hover effect for better UI interaction */
+.actionButton:hover {
+  background-color: #0056b3; /* Slightly darker shade on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.roundedButton {
+  border-radius: 999px; /* Ensures fully rounded corners */
+}
+
+/* Add this to your styles.module.css */
+.scrolled {
+  height: 50px; /* Reduced height when scrolled */
+  padding: 0 15px; /* Adjust padding if necessary */
 }

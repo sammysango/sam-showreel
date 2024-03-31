@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "../../ThemeContext"; // Adjust the path as necessary
+import { useTheme } from "../../ThemeContext";
 import styles from "./styles.module.css";
 
 const Navbar = () => {
-  const { toggleTheme, nextColorScheme } = useTheme(); // Use the useTheme hook to get the toggleTheme function
+  const { toggleTheme, nextColorScheme } = useTheme();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Set isScrolled to true if page is scrolled more than 50 pixels
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
       <span className={styles.brandName}>Sam Sanger</span>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
@@ -32,7 +44,9 @@ const Navbar = () => {
         </li>
       </ul>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <button className={styles.actionButton}>Placeholder</button>
+        <button className={`${styles.actionButton} ${styles.roundedButton}`}>
+          Placeholder
+        </button>
         <button className={styles.placeholder}>✉️</button>
         <button className={styles.placeholder} onClick={nextColorScheme}>
           🎨
