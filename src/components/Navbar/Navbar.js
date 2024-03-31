@@ -59,7 +59,10 @@ const Navbar = () => {
             <PaintIconAnim className={styles.animatedIcon} />
           </div>
         </button>
-        <button className={styles.navbarIcon} onClick={toggleTheme}>
+        <button
+          className={`${styles.navbarIcon} ${styles.toggleTheme}`}
+          onClick={toggleTheme}
+        >
           <MoonIcon
             className={`${styles.icon} ${theme === "dark" ? styles.iconHide : ""}`}
           />

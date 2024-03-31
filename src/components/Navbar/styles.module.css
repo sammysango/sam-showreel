@@ -170,3 +170,22 @@ body {
   transform: scale(0.5);
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  .navList,
+  .actionButton,
+  .navbarIcon:not(.toggleTheme) {
+    display: none;
+  }
+
+  .toggleTheme {
+    position: absolute;
+    right: 20px;
+  }
+
+  .brandName {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
