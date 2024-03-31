@@ -8,7 +8,7 @@ body {
 
 .navbar {
   display: flex;
-  height: 80px;
+  height: 90px;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
@@ -31,12 +31,13 @@ body {
 }
 
 .navItem {
-  margin: 0 20px; /* Adjust as needed to space out the links */
+  margin: 0 30px; /* Adjust as needed to space out the links */
 }
 
 .navLink {
   color: var(--text-color);
   font-weight: bold;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
@@ -44,7 +45,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   flex-shrink: 0; /* Prevent the brand name from shrinking */
-  margin-right: 20px; /* Add right margin to create space */
+  margin-right: 17px; /* Add right margin to create space */
 }
 
 .brandName,
@@ -54,35 +55,52 @@ body {
 }
 
 /* Adjustments for placeholders and button */
-.placeholder,
+.navbarIcon,
 .actionButton {
   display: inline-block; /* Display items inline */
-  margin: 0 10px; /* Maintain spacing on the right */
+  margin: 0 30px; /* Maintain spacing on the right */
+  font-size: 1rem;
   transition: margin 0.3s ease-in-out;
 }
 
-.placeholder {
-  width: 30px;
-  height: 30px;
+.navbarIcon {
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
-  background-color: #666;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  margin: 0 18px;
+  padding: 0 7px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: scale 0.2s ease-in-out;
+  position: relative;
+}
+
+.navbarIcon:hover {
+  scale: 108%;
 }
 
 .actionButton {
   background-color: var(--text-color);
   color: var(--background-color);
   border: none;
-  border-radius: 999px; /* Ensures fully rounded corners */
-  padding: 10px 15px;
+  border-radius: 999px;
+  font-weight: bold;
+  padding: 7px 20px;
   cursor: pointer;
   transition:
     background-color 0.3s,
     transform 0.3s; /* Smooth transition for hover effects */
 }
 
-/* Optional: Add a hover effect for better UI interaction */
 .actionButton:hover {
-  background-color: #0056b3; /* Slightly darker shade on hover */
+  background-color: var(
+    --highlight-color-1
+  ); /* Slightly darker shade on hover */
   transform: scale(1.05); /* Slightly increase size on hover */
 }
 
@@ -90,8 +108,65 @@ body {
   border-radius: 999px; /* Ensures fully rounded corners */
 }
 
-/* Add this to your styles.module.css */
 .scrolled {
   height: 50px; /* Reduced height when scrolled */
   padding: 0 15px; /* Adjust padding if necessary */
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px; /* Ensure this width matches the intended size of the icons */
+  height: 33px; /* Ensure this height matches the intended size of the icons */
+  position: relative;
+  overflow: hidden; /* Add this to prevent the icon from overflowing the button */
+}
+
+.staticIcon,
+.animatedIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the icon */
+  width: 100%; /* Adjust if necessary to match the icon's size */
+  height: auto; /* Adjust if necessary to preserve the icon's aspect ratio */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  opacity: 0; /* Start with icons hidden */
+}
+
+.staticIcon {
+  z-index: 1; /* Ensure static icon is above the animated one by default */
+  opacity: 1; /* Make static icon visible by default */
+}
+
+.animatedIcon {
+  visibility: visible; /* Always visible but transparent when not hovered */
+  z-index: 2; /* Ensure animated icon is above the static one */
+}
+
+/* On hover of the navbarIcon, hide the static icon and fade in the animated icon */
+.navbarIcon:hover .staticIcon {
+  opacity: 0; /* Fade out the static icon */
+}
+
+.navbarIcon:hover .animatedIcon {
+  opacity: 1; /* Fade in the animated icon */
+}
+
+.icon {
+  transition:
+    transform 0.3s ease,
+    opacity 0.1s ease;
+  transform-origin: -7px -5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iconHide {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
 }
