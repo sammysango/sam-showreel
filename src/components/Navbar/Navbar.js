@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import styles from "./styles.module.css";
@@ -7,33 +7,108 @@ import { ReactComponent as MoonIcon } from "../../assets/moonIcon.svg";
 import { ReactComponent as PaintIcon } from "../../assets/paintIcon.svg";
 import { ReactComponent as PaintIconAnim } from "../../assets/paintIconAnim.svg";
 import { ReactComponent as SunIcon } from "../../assets/sunIcon.svg";
-import { ReactComponent as HamburgerIcon } from "../../assets/hamburgerIcon.svg"; // Import the HamburgerIcon
 
 const Navbar = () => {
   const { theme, toggleTheme, nextColorScheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage the mobile menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleClickOutside = (event) => {
+      if (
+        isMenuOpen &&
+        navRef.current &&
+        !navRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
 
-  // Function to toggle mobile menu visibility
+    document.addEventListener("mousedown", handleClickOutside);
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false); // Automatically close hamburger menu on window resize if above breakpoint
+      }
+    });
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavLinkClick = () => {
+    if (isMenuOpen) {
+      toggleMenu();
+    }
   };
 
   return (
     <nav
       className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.active : ""}`}
+      ref={navRef}
     >
-      <HamburgerIcon className={styles.hamburgerIcon} onClick={toggleMenu} />{" "}
-      {/* Hamburger menu icon */}
+      {/* Hamburger menu icon with SVG directly embedded for animation */}
+      <div
+        className={`${styles.hamburgerIcon} ${isMenuOpen ? styles.active : ""}`}
+        onClick={toggleMenu}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 53.057 38.525"
+          width="30"
+          height="30"
+        >
+          <g
+            className={`${styles.hamburgerTop} ${isMenuOpen ? styles.rotateToXTop : styles.rotateBackTop}`}
+          >
+            <rect
+              x="0"
+              y="0"
+              width="53.057"
+              height="3.491"
+              rx="1.745"
+              ry="1.745"
+              fill="currentColor"
+            />
+          </g>
+          <g
+            className={`${styles.hamburgerMiddle} ${isMenuOpen ? styles.fadeOut : styles.fadeIn}`}
+          >
+            <rect
+              x="0"
+              y="17.017"
+              width="53.057"
+              height="3.491"
+              rx="1.745"
+              ry="1.745"
+              fill="currentColor"
+            />
+          </g>
+          <g
+            className={`${styles.hamburgerBottom} ${isMenuOpen ? styles.rotateToXBottom : styles.rotateBackBottom}`}
+          >
+            <rect
+              x="0"
+              y="34.034"
+              width="53.057"
+              height="3.491"
+              rx="1.745"
+              ry="1.745"
+              fill="currentColor"
+            />
+          </g>
+        </svg>
+      </div>
       <span className={styles.brandName}>Sam Sanger</span>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
