@@ -23,6 +23,11 @@ module.exports = {
         test: /\.css$/, // New rule for CSS files
         use: ["style-loader", "css-loader"], // Use style-loader and css-loader for CSS files
       },
+      // Add a new rule for SVG files
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack", "file-loader"],
+      },
     ],
   },
   plugins: [
@@ -36,6 +41,6 @@ module.exports = {
     },
     compress: true,
     port: 9000, // Specify the port for the development server
-    historyApiFallback: true,
+    historyApiFallback: true, // This option is required for SPA routing to work on reloads
   },
 };

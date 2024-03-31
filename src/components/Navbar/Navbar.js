@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 import styles from "./styles.module.css";
+import { ReactComponent as EmailIcon } from "../../assets/emailIcon.svg";
+import { ReactComponent as MoonIcon } from "../../assets/moonIcon.svg";
+import { ReactComponent as PaintIcon } from "../../assets/paintIcon.svg";
+import { ReactComponent as PaintIconAnim } from "../../assets/paintIconAnim.svg"; // Corrected typo
 
 const Navbar = () => {
   const { toggleTheme, nextColorScheme } = useTheme();
@@ -9,12 +13,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Set isScrolled to true if page is scrolled more than 50 pixels
       setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -47,12 +49,17 @@ const Navbar = () => {
         <button className={`${styles.actionButton} ${styles.roundedButton}`}>
           Placeholder
         </button>
-        <button className={styles.placeholder}>✉️</button>
-        <button className={styles.placeholder} onClick={nextColorScheme}>
-          🎨
+        <button className={styles.navbarIcon}>
+          <EmailIcon />
         </button>
-        <button className={styles.placeholder} onClick={toggleTheme}>
-          🌙
+        <button className={styles.navbarIcon} onClick={nextColorScheme}>
+          <div className={styles.iconContainer}>
+            <PaintIcon className={styles.staticIcon} />
+            <PaintIconAnim className={styles.animatedIcon} />
+          </div>
+        </button>
+        <button className={styles.navbarIcon} onClick={toggleTheme}>
+          <MoonIcon />
         </button>
       </div>
     </nav>
