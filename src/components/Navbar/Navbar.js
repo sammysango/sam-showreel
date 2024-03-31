@@ -7,10 +7,12 @@ import { ReactComponent as MoonIcon } from "../../assets/moonIcon.svg";
 import { ReactComponent as PaintIcon } from "../../assets/paintIcon.svg";
 import { ReactComponent as PaintIconAnim } from "../../assets/paintIconAnim.svg";
 import { ReactComponent as SunIcon } from "../../assets/sunIcon.svg";
+import { ReactComponent as HamburgerIcon } from "../../assets/hamburgerIcon.svg"; // Import the HamburgerIcon
 
 const Navbar = () => {
   const { theme, toggleTheme, nextColorScheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage the mobile menu visibility
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +23,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Function to toggle mobile menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}>
+    <nav
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.active : ""}`}
+    >
+      <HamburgerIcon className={styles.hamburgerIcon} onClick={toggleMenu} />{" "}
+      {/* Hamburger menu icon */}
       <span className={styles.brandName}>Sam Sanger</span>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
