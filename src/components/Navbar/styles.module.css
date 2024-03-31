@@ -8,7 +8,7 @@ body {
 
 .navbar {
   display: flex;
-  height: 80px;
+  height: 90px;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
@@ -31,12 +31,13 @@ body {
 }
 
 .navItem {
-  margin: 0 20px; /* Adjust as needed to space out the links */
+  margin: 0 30px; /* Adjust as needed to space out the links */
 }
 
 .navLink {
   color: var(--text-color);
   font-weight: bold;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
@@ -44,7 +45,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   flex-shrink: 0; /* Prevent the brand name from shrinking */
-  margin-right: 20px; /* Add right margin to create space */
+  margin-right: 17px; /* Add right margin to create space */
 }
 
 .brandName,
@@ -89,7 +90,7 @@ body {
   border: none;
   border-radius: 999px;
   font-weight: bold;
-  padding: 8px 15px;
+  padding: 7px 20px;
   cursor: pointer;
   transition:
     background-color 0.3s,
