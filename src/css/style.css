@@ -1,18 +1,19 @@
+/* color schemes */
 :root {
-  --background-color: #ffffff; /* Fallback background color for light mode */
+  --background-color: #fdfcf6; /* Fallback background color for light mode */
   --text-color: #000000; /* Fallback text color for light mode */
   --highlight-color: #61dfff; /* Fallback highlight color for light mode */
 }
 
 /* Light Mode Base and Color Schemes */
 body[data-theme="light"] {
-  --background-color: #ffffff; /* Default for light mode */
+  --background-color: #fdfcf6; /* Default for light mode */
   --text-color: #333333;
   --highlight-color: #61dfff;
 }
 
 body[data-theme="light"][data-color-scheme="1"] {
-  --background-color: #ffffff;
+  --background-color: #fdfcf6;
   --text-color: #333333;
   --highlight-color: #61dfff;
 }
@@ -66,10 +67,58 @@ body[data-theme="dark"][data-color-scheme="4"] {
   --highlight-color: #9b9bff;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+/* fonts */
+@font-face {
+  font-family: "Product Sans";
+  src: url("../fonts/ProductSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  src: url("../fonts/ProductSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  src: url("../fonts/ProductSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  src: url("../fonts/ProductSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: "Product Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Product Sans", sans-serif;
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: bold;
 }
