@@ -4,7 +4,14 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+}
+
+/* Apply overflow-x: hidden only under certain conditions, such as a max-width */
+@media (max-width: 1000px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .navbar {
@@ -19,7 +26,7 @@ body {
   color: var(--text-color);
   position: sticky;
   top: 0;
-  z-index: 1000; /* Higher than other content */
+  z-index: 1000;
   transition:
     height 0.3s ease-in-out,
     padding 0.3s ease-in-out;
@@ -35,6 +42,7 @@ body {
 
 .navItem {
   margin: 0 30px; /* Adjust as needed to space out the links */
+  transition: margin 0.3s ease;
 }
 
 .navLink {
@@ -112,7 +120,7 @@ body {
 }
 
 .scrolled {
-  height: 50px; /* Reduced height when scrolled */
+  height: 60px; /* Reduced height when scrolled */
   padding: 0 15px; /* Adjust padding if necessary */
 }
 
@@ -190,7 +198,13 @@ body {
   display: block; /* Show when active */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .navItem {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 1000px) {
   .navList,
   .actionButton,
   .navbarIcon:not(.toggleTheme) {

@@ -9,15 +9,28 @@ import { ReactComponent as PaintIconAnim } from "../../assets/paintIconAnim.svg"
 import { ReactComponent as SunIcon } from "../../assets/sunIcon.svg";
 
 const Navbar = () => {
+  console.log("Navbar component is rendering");
   const { theme, toggleTheme, nextColorScheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef();
 
   useEffect(() => {
+    console.log("useEffect for scroll event setup is running");
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      console.log("Scroll event triggered");
+      console.log(window.scrollY); // This will log the current vertical scroll position
+
+      if (window.scrollY > 50) {
+        console.log("Setting scrolled to true");
+        setIsScrolled(true);
+      } else {
+        console.log("Setting scrolled to false");
+        setIsScrolled(false);
+      }
     };
+
+    window.addEventListener("scroll", handleScroll);
 
     const handleClickOutside = (event) => {
       if (
@@ -30,15 +43,21 @@ const Navbar = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
-        setIsMenuOpen(false); // Automatically close hamburger menu on window resize if above breakpoint
+        setIsMenuOpen(false); // Automatically close the hamburger menu on window resize if above the breakpoint.
       }
     });
 
+    // Clean up function to remove event listeners
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          setIsMenuOpen(false);
+        }
+      });
     };
   }, [isMenuOpen]);
 
@@ -47,9 +66,7 @@ const Navbar = () => {
   };
 
   const handleNavLinkClick = () => {
-    if (isMenuOpen) {
-      toggleMenu();
-    }
+    setIsMenuOpen(false); // Close the hamburger menu when a link is clicked.
   };
 
   return (
@@ -112,22 +129,34 @@ const Navbar = () => {
       <span className={styles.brandName}>Sam Sanger</span>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link className={styles.navLink} to="/">
+          <Link to="/" className={styles.navLink} onClick={handleNavLinkClick}>
             Home
           </Link>
         </li>
         <li className={styles.navItem}>
-          <Link className={styles.navLink} to="/about">
+          <Link
+            to="/about"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             About
           </Link>
         </li>
         <li className={styles.navItem}>
-          <Link className={styles.navLink} to="/portfolio">
+          <Link
+            to="/portfolio"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             Portfolio
           </Link>
         </li>
         <li className={styles.navItem}>
-          <Link className={styles.navLink} to="/contact">
+          <Link
+            to="/contact"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
             Contact
           </Link>
         </li>
