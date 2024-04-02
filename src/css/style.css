@@ -89,13 +89,13 @@ body[data-theme="dark"][data-color-scheme="4"] {
   --gradient-1: linear-gradient(to top, #948984, #b4aca4);
 }
 
-/*
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
-*/
 
 /* fonts */
 @font-face {

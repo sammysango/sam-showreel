@@ -1,12 +1,16 @@
 import React from "react";
+import ContactForm from "../components/ContactForm/ContactForm";
 
-const AboutPage = () => {
+const ContactPage = () => {
   return (
     <div>
       <h1>Contact Page</h1>
-      <p>This is the Contact Page. There will be a contact form here.</p>
+      <p>
+        This is the Contact Page. You can contact us through the form below.
+      </p>
+      <ContactForm />
     </div>
   );
 };
 
-export default AboutPage;
+export default ContactPage;

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "./css/style.css";
 import { HashRouter as Router, Routes, Route } from "react-router-dom"; // Import HashRouter
 import { useTheme } from "./ThemeContext";
 import Navbar from "./components/Navbar/Navbar";
@@ -19,8 +20,6 @@ const App = () => {
   return (
     <div data-theme={theme} data-color-scheme={colorScheme}>
       <Router>
-        {" "}
-        {/* Use HashRouter */}
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
