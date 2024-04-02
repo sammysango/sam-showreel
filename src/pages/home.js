@@ -1,18 +1,17 @@
 import React from "react";
+import "./home.css";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>This is the Home Page. Add your content here.</p>
-      {/* Add placeholder content to allow for scrolling */}
-      {Array.from({ length: 50 }, (_, index) => (
-        <p key={index}>
-          Placeholder content paragraph {index + 1}. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua.
-        </p>
-      ))}
+    <div className="homepage">
+      <div className="module feature">Featured Work Stream</div>
+      <div className="module banner">Banner</div>
+      <div className="module sideModule">Side Module</div>
+      <div className="modulesUnderBanner">
+        <div className="module module1">Module 1</div>
+        <div className="module module2">Module 2</div>
+      </div>
+      <div className="module module3">Module 3</div> {/* New Module 3 */}
     </div>
   );
 };
