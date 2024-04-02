@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Adjust this value based on your preference */
+  margin: 0 auto; /* Centers the form with automatic margins */
+  padding: 20px; /* Adds padding inside the form for spacing around elements */
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Gives a border to input fields */
+  border-radius: 5px; /* Rounds the corners of input fields */
+}
+
+.submitButton {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounds the corners of the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
