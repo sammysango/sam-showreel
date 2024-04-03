@@ -1,6 +1,43 @@
 .banner {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 40px; /* Increased padding for more space inside the banner */
+  gap: 20px; /* Optional: Adds space between the text and image sections if needed */
+}
+
+.textContent {
+  flex: 1;
+  padding-right: 100px; /* Adjusted to bring text closer to the left */
+}
+
+.title {
+  font-size: 24px; /* Example size */
+  font-weight: bold; /* Bold font weight for the title */
+  margin-bottom: 10px; /* Space between the title and the description */
+}
+
+.description {
+  font-size: 16px; /* Smaller font size for the description */
+  font-weight: normal; /* Normal font weight for the description */
+}
+
+.imageContent {
+  flex: 1;
+  width: 50%; /* Ensures it takes up half the banner's width */
+  height: 100%; /* Ensures it fills the available height */
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.imagePlaceholder {
+  width: 100%; /* Fills the full width of its container */
+  height: 100%; /* Adjusted to fill the container */
+  background-color: #ddd; /* Placeholder color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px; /* Optional, for styled placeholder */
 }
