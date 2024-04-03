@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
 }
 
 .homepage {
@@ -9,7 +8,7 @@ body {
   grid-template-columns: 1fr 3.2fr 2fr; /* Adjusted proportions remain */
   grid-template-rows: 35vh 35vh auto; /* Adjusted for direct placement under Side Module */
   gap: 30px; /* Space between grid items */
-  margin: 40px 60px; /* Page margins for breathing room */
+  margin: 35px 60px; /* Page margins for breathing room */
   background-color: var(--background-color);
 }
 
