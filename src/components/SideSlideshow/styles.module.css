@@ -1,0 +1,93 @@
+.slideshowContainer {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex; /* Centers the SVG within the button */
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Define button size to help with centering */
+  height: 20px;
+}
+
+.controls button svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(128, 128, 128, 0.5);
+}
+
+.prev svg {
+  transform-origin: 50% 50%;
+}
+
+.next svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Adjust the gap between dots */
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Adjust the gap between dots */
+}
+
+.controls .dot,
+.controls .dotActive {
+  width: 10px;
+  height: 10px;
+  background: var(--text-color-2);
+  border-radius: 50%;
+  border: 2px solid var(--text-color-2); /* Ensure a border is there even for the dot state */
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    transform 0.3s; /* Use transform for scaling */
+}
+
+.controls .dotActive {
+  background: none;
+  transform: scale(1.4); /* Use transform scale for smoother animations */
+}

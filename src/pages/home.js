@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.css";
 import BannerComponent from "../components/HomeBanner/HomeBanner";
+import SideSlideshow from "../components/SideSlideshow/SideSlideshow";
 
 const HomePage = () => {
   return (
@@ -9,7 +10,9 @@ const HomePage = () => {
       <div className="module banner">
         <BannerComponent />
       </div>
-      <div className="module sideModule">Side Module</div>
+      <div className="module sideModule">
+        <SideSlideshow />
+      </div>
       <div className="modulesUnderBanner">
         <div className="module module1">Module 1</div>
         <div className="module module2">Module 2</div>
