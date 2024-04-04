@@ -30,12 +30,19 @@ body {
   grid-column: 2 / 3; /* Second column */
   grid-row: 1; /* First row */
   background: var(--gradient-1);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 28vh;
+  padding-bottom: 50px;
 }
 
 .sideModule {
   grid-column: 3 / 4; /* Third column */
   grid-row: 1; /* First row */
   background: var(--gradient-1);
+  min-height: 28vh;
 }
 
 .modulesUnderBanner {
