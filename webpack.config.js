@@ -28,6 +28,19 @@ module.exports = {
         test: /\.svg$/,
         use: ["@svgr/webpack", "file-loader"],
       },
+      // New rule for .webp files using file-loader
+      {
+        test: /\.(webp)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "images/", // Where to save the output images in the build folder
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
