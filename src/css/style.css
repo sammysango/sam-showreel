@@ -4,7 +4,7 @@
   --text-color: #0a0802; /* Fallback text color for light mode */
   --text-color-2: #fff;
   --highlight-color-1: #d2ccc5;
-  --highlight-color-2: #61dfff; /* Fallback highlight color for light mode */
+  --highlight-color-2: #8fc8d6; /* Fallback highlight color for light mode */
   --gradient-1: linear-gradient(to top, #948984, #b4aca4);
 }
 
@@ -14,7 +14,7 @@ body[data-theme="light"] {
   --text-color: #0a0802;
   --text-color-2: #fff;
   --highlight-color-1: #d2ccc5;
-  --highlight-color-2: #61dfff;
+  --highlight-color-2: #8fc8d6;
   --gradient-1: linear-gradient(to top, #948984, #b4aca4);
 }
 
@@ -23,7 +23,7 @@ body[data-theme="light"][data-color-scheme="1"] {
   --text-color: #0a0802;
   --text-color-2: #fff;
   --highlight-color-1: #d2ccc5;
-  --highlight-color-2: #61dfff;
+  --highlight-color-2: #8fc8d6;
   --gradient-1: linear-gradient(to top, #948984, #b4aca4);
 }
 

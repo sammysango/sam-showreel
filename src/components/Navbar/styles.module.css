@@ -42,8 +42,14 @@ body {
 }
 
 .navItem {
-  margin: 0 30px; /* Adjust as needed to space out the links */
-  transition: margin 0.3s ease;
+  margin: 0 35px; /* Adjust as needed to space out the links */
+  transition:
+    margin 0.3s ease,
+    scale 0.15s ease;
+}
+
+.navItem:hover {
+  scale: 108%;
 }
 
 .navLink {
@@ -51,6 +57,11 @@ body {
   font-weight: bold;
   font-size: 0.9rem;
   text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  color: var(--highlight-color-2);
 }
 
 .brandName {
