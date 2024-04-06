@@ -7,7 +7,7 @@
 }
 
 .textContent {
-  flex: 1.25;
+  flex: 1.2;
 }
 
 .title {
@@ -15,6 +15,7 @@
   font-style: italic;
   font-weight: bold;
   color: var(--text-color-2);
+  margin-top: 4vh;
   margin-right: 20px;
   margin-bottom: 0;
 }
