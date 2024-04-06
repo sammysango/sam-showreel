@@ -1,0 +1,112 @@
+.brandScrollContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.heading {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 50px;
+  color: var(--text-color-2);
+}
+
+.scrollContainer {
+  position: relative;
+  white-space: nowrap;
+  overflow: visible;
+  /* Set a max-width if necessary to prevent spanning the full page width */
+  max-width: 100%; /* Adjust as necessary */
+}
+
+.scrollContainer::before,
+.scrollContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 75px; /* Adjust the width of the fade effect */
+  pointer-events: none;
+  margin-top: -15px;
+}
+
+.scrollContainer::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--highlight-color-2) 0%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.scrollContainer::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--highlight-color-2) 0%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.logoScroll {
+  display: inline-flex;
+  animation: scrollLogos 45s linear infinite;
+}
+
+img {
+  height: 35px; /* Adjust based on your preference */
+  margin-right: 140px; /* Space between logos */
+  margin-bottom: 30px;
+}
+
+/* Keyframes for logo scroll animation */
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo0 {
+  transform: scale(1);
+  margin-top: 7px;
+  filter: invert(100%);
+}
+.logo1 {
+  transform: scale(1.1);
+  margin-top: 0px;
+  filter: invert(100%);
+}
+.logo2 {
+  transform: scale(1);
+  margin-top: 3px;
+  filter: invert(100%);
+}
+.logo3 {
+  transform: scale(0.9);
+  margin-top: 1px;
+  filter: invert(100%);
+}
+.logo4 {
+  transform: scale(1.1);
+  margin-top: 1px;
+  filter: invert(100%);
+}
+.logo5 {
+  transform: scale(1.1);
+  margin-top: -1px;
+  filter: invert(100%);
+}
+.logo6 {
+  transform: scale(1);
+  margin-top: -5px;
+  filter: invert(100%);
+}
+.logo7 {
+  transform: scale(1.05);
+  margin-top: -2px;
+  filter: sepia(1) grayscale(100%);
+}
