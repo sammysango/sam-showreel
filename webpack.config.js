@@ -2,10 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js", // Entry point for your application
+  entry: "./src/index.js", // Entry point for application
   output: {
-    path: path.resolve(__dirname, "dist"), // Output directory for the bundle
-    filename: "bundle.js", // Name of the bundled file
+    path: path.resolve(__dirname, "dist"), // Output directory for bundle
+    filename: "bundle.js", // Name of bundled file
   },
   module: {
     rules: [
@@ -20,23 +20,21 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/, // New rule for CSS files
+        test: /\.css$/, // Process .CSS files
         use: ["style-loader", "css-loader"], // Use style-loader and css-loader for CSS files
       },
-      // Add a new rule for SVG files
       {
-        test: /\.svg$/,
+        test: /\.svg$/, // Process .svg files
         use: ["@svgr/webpack", "file-loader"],
       },
-      // New rule for .webp files using file-loader
       {
-        test: /\.(webp)$/,
+        test: /\.(webp)$/, //process .webp files
         use: [
           {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "images/", // Where to save the output images in the build folder
+              outputPath: "images/",
             },
           },
         ],
@@ -45,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html", // Path to your template HTML file
+      template: "./public/index.html", // Path to template HTML
     }),
   ],
   devServer: {
@@ -53,7 +51,7 @@ module.exports = {
       directory: path.join(__dirname, "dist"),
     },
     compress: true,
-    port: 9000, // Specify the port for the development server
-    historyApiFallback: true, // This option is required for SPA routing to work on reloads
+    port: 9000,
+    historyApiFallback: true,
   },
 };

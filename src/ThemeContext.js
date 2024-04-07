@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
-import PropTypes from "prop-types"; // Import PropTypes
+import PropTypes from "prop-types";
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light"); // Light or dark
-  const [colorScheme, setColorScheme] = useState(1); // Assuming 1-4 for simplicity
+  const [colorScheme, setColorScheme] = useState(1); // Assuming 1-4
 
   const toggleTheme = () => {
     console.log("Toggling theme");

@@ -19,7 +19,7 @@ const Navbar = () => {
     console.log("useEffect for scroll event setup is running");
     const handleScroll = () => {
       console.log("Scroll event triggered");
-      console.log(window.scrollY); // This will log the current vertical scroll position
+      console.log(window.scrollY); // log current vertical scroll position
 
       if (window.scrollY > 50) {
         console.log("Setting scrolled to true");
@@ -45,11 +45,11 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
-        setIsMenuOpen(false); // Automatically close the hamburger menu on window resize if above the breakpoint.
+        setIsMenuOpen(false); // Close hamburger menu on window resize when above the breakpoint.
       }
     });
 
-    // Clean up function to remove event listeners
+    // Clean up
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
@@ -66,7 +66,7 @@ const Navbar = () => {
   };
 
   const handleNavLinkClick = () => {
-    setIsMenuOpen(false); // Close the hamburger menu when a link is clicked.
+    setIsMenuOpen(false); // Close hamburger menu when link clicked
   };
 
   return (
@@ -74,7 +74,6 @@ const Navbar = () => {
       className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.active : ""}`}
       ref={navRef}
     >
-      {/* Hamburger menu icon with SVG directly embedded for animation */}
       <div
         className={`${styles.hamburgerIcon} ${isMenuOpen ? styles.active : ""}`}
         onClick={toggleMenu}

@@ -6,7 +6,7 @@ body {
 .homepage {
   display: grid;
   grid-template-columns: 1fr 3.2fr 2fr;
-  grid-template-rows: minmax(30vh, auto) minmax(28vh, auto) auto; /* Adjust rows to be flexible */
+  grid-template-rows: minmax(30vh, auto) minmax(28vh, auto) auto;
   gap: 30px;
   margin: 35px 60px;
   background-color: var(--background-color);
