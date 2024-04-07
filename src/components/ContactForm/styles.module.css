@@ -1,9 +1,9 @@
 .form {
   display: flex;
   flex-direction: column;
-  max-width: 600px; /* Adjust this value based on your preference */
-  margin: 0 auto; /* Centers the form with automatic margins */
-  padding: 20px; /* Adds padding inside the form for spacing around elements */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .formGroup {

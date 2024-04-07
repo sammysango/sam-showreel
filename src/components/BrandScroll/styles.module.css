@@ -14,8 +14,7 @@
   position: relative;
   white-space: nowrap;
   overflow: visible;
-  /* Set a max-width if necessary to prevent spanning the full page width */
-  max-width: 100%; /* Adjust as necessary */
+  max-width: 100%;
 }
 
 .scrollContainer::before,
@@ -24,7 +23,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 75px; /* Adjust the width of the fade effect */
+  width: 75px;
   pointer-events: none;
   margin-top: -15px;
 }
@@ -55,8 +54,8 @@
 }
 
 img {
-  height: 35px; /* Adjust based on your preference */
-  margin-right: 140px; /* Space between logos */
+  height: 35px;
+  margin-right: 140px;
   margin-bottom: 30px;
 }
 

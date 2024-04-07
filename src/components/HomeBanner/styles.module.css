@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 30px; /* Increased padding for more space inside the banner */
+  padding: 30px;
 }
 
 .textContent {
@@ -25,8 +25,8 @@
 }
 
 .description {
-  font-size: 16px; /* Smaller font size for the description */
-  font-weight: 400; /* Normal font weight for the description */
+  font-size: 16px;
+  font-weight: 400;
   color: var(--text-color-2);
   padding-bottom: 5px;
 }

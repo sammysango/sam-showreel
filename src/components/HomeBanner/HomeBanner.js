@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./styles.module.css";
 
 const svgTitleCode = `
@@ -44,9 +44,9 @@ const HomeBanner = () => {
           />
         </h2>
         <p className={styles.description}>
-          Hi, I'm Sam; creative content powerhouse, with experience across all
-          facets of visual media. I bring proven value from small scale startups
-          to global tech brands and Web3 products.
+          Hi, I&apos;m Sam; creative content powerhouse, with experience across
+          all facets of visual media. I bring proven value from small scale
+          startups to global tech brands and Web3 products.
         </p>
         <button className={styles.exploreButton}>
           Explore
