@@ -20,16 +20,24 @@
   padding: 10px;
   margin-top: 5px;
   box-sizing: border-box;
-  border: 1px solid #ccc; /* Gives a border to input fields */
-  border-radius: 5px; /* Rounds the corners of input fields */
+  border: 1px solid var(--text-color);
+  resize: vertical;
+  border-radius: 999px;
+}
+
+.formGroup textarea {
+  min-height: 8rem;
+  border-radius: 25px;
 }
 
 .submitButton {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
+  padding: 16px;
+  background-color: var(--text-color);
+  color: var(--background-color);
   border: none;
-  border-radius: 5px; /* Rounds the corners of the button */
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
