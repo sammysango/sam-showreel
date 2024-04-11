@@ -14,7 +14,7 @@ export const ThemeProvider = ({ children }) => {
 
   const nextColorScheme = () => {
     console.log("Cycling color schemes");
-    setColorScheme((current) => (current === 4 ? 1 : current + 1)); // Cycle through 1-4
+    setColorScheme((current) => (current === 9 ? 1 : current + 1)); // Cycle through 1-4
   };
 
   return (

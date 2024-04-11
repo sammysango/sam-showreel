@@ -83,7 +83,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--highlight-color-2);
+  background: var(--highlight-color-1);
   padding: 20px;
   min-height: 10vh;
   overflow: hidden;

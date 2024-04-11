@@ -29,30 +29,81 @@ body[data-theme="light"][data-color-scheme="1"] {
 }
 
 body[data-theme="light"][data-color-scheme="2"] {
-  --background-color: #fafafa;
-  --text-color: #444444;
-  --text-color-2: #fff;
-  --highlight-color-1: #ff616f;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #ffe4e6; /* Very light pink */
+  --text-color-1: #88304e; /* Dark maroon */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #ffc1cc; /* Soft pink */
+  --highlight-color-2: #ffa6b9; /* Medium pink */
+  --gradient-1: linear-gradient(#ff748c, #e63946); /* Richer shades of pink */
 }
 
 body[data-theme="light"][data-color-scheme="3"] {
-  --background-color: #f0f0f0;
-  --text-color: #555555;
-  --text-color-2: #fff;
-  --highlight-color-1: #61ff7a;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #fff0d5; /* Light apricot */
+  --text-color-1: #4a4e69; /* Dark slate blue */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #ffd6a5; /* Pastel orange */
+  --highlight-color-2: #fabd80; /* Soft orange */
+  --gradient-1: linear-gradient(#e59866, #d9822f); /* Shades of darker orange */
 }
 
 body[data-theme="light"][data-color-scheme="4"] {
-  --background-color: #e0e0e0;
-  --text-color: #666666;
-  --text-color-2: #fff;
-  --highlight-color-1: #7a61ff;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #dafef6; /* Very light mint */
+  --text-color-1: #405d27; /* Forest green */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #a2f2bf; /* Light green */
+  --highlight-color-2: #74d3ae; /* Medium mint */
+  --gradient-1: linear-gradient(#66d2c9, #2caba8); /* Deeper shades of aqua */
+}
+
+body[data-theme="light"][data-color-scheme="5"] {
+  --background-color: #d8f3ff; /* Lightest sky blue */
+  --text-color-1: #2c387e; /* Dark blue */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #81d4fa; /* Light sky blue */
+  --highlight-color-2: #4fc3f7; /* Bright blue */
+  --gradient-1: linear-gradient(#29b6f6, #0288d1); /* Richer shades of blue */
+}
+
+body[data-theme="light"][data-color-scheme="6"] {
+  --background-color: #d6fff1; /* Very light teal */
+  --text-color-1: #274d5b; /* Deep teal */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #80cbc4; /* Soft teal */
+  --highlight-color-2: #4db6ac; /* Medium teal */
+  --gradient-1: linear-gradient(#00897b, #00695c); /* Richer shades of teal */
+}
+
+body[data-theme="light"][data-color-scheme="7"] {
+  --background-color: #eafaf1; /* Light mint */
+  --text-color-1: #1a5276; /* Deep cyan */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #48c9b0; /* Medium aqua */
+  --highlight-color-2: #76d7c4; /* Light aqua */
+  --gradient-1: linear-gradient(#45b39d, #52be80); /* Aqua to soft green */
+}
+
+body[data-theme="light"][data-color-scheme="8"] {
+  --background-color: #e8f8f5; /* Mint cream */
+  --text-color-1: #196f3d; /* Jungle green */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #abebc6; /* Pale green */
+  --highlight-color-2: #28b463; /* Emerald */
+  --gradient-1: linear-gradient(
+    #1d8348,
+    #239b56
+  ); /* Deep green to medium green */
+}
+
+body[data-theme="light"][data-color-scheme="9"] {
+  --background-color: #f5eef8; /* Lavender mist */
+  --text-color-1: #512e5f; /* Dark purple */
+  --text-color-2: #ffffff; /* Pure white */
+  --highlight-color-1: #bb8fce; /* Soft purple */
+  --highlight-color-2: #8e44ad; /* Vivid purple */
+  --gradient-1: linear-gradient(
+    #8e44ad,
+    #c39bd3
+  ); /* Dark purple to light purple */
 }
 
 /* Dark Mode Base and Color Schemes */
@@ -66,39 +117,90 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="dark"][data-color-scheme="1"] {
-  --background-color: #0a0802;
-  --text-color: #fdfcf6;
-  --text-color-2: #fff;
-  --highlight-color-1: #9bdbff;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #1e1c19;
+  --text-color: #f5f5f5;
+  --text-color-2: #f5f5f5;
+  --highlight-color-1: #a89990;
+  --highlight-color-2: #62717a;
+  --gradient-1: linear-gradient(to top, #5a534f, #79706a);
 }
 
 body[data-theme="dark"][data-color-scheme="2"] {
-  --background-color: #292929;
-  --text-color: #eeeeee;
-  --text-color-2: #fff;
-  --highlight-color-1: #ff9b9b;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #2c0a0b; /* Dark maroon */
+  --text-color-1: #fadadd; /* Soft pink */
+  --text-color-2: #ffcede; /* Dark maroon */
+  --highlight-color-1: #d81b60; /* Darker pink */
+  --highlight-color-2: #ad1457; /* Deep pink */
+  --gradient-1: linear-gradient(#d81b60, #ad1457); /* Deeper pink shades */
 }
 
 body[data-theme="dark"][data-color-scheme="3"] {
-  --background-color: #1f1f1f;
-  --text-color: #dddddd;
-  --text-color-2: #fff;
-  --highlight-color-1: #9bff9b;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #3f3a2f; /* Dark slate */
+  --text-color-1: #c9cdd4; /* Light slate */
+  --text-color-2: #f8d3b0; /* Dark slate blue */
+  --highlight-color-1: #e6ac77; /* Warm amber */
+  --highlight-color-2: #c07848; /* Deep orange */
+  --gradient-1: linear-gradient(#a15a33, #6b381d); /* Darker shades of brown */
 }
 
 body[data-theme="dark"][data-color-scheme="4"] {
-  --background-color: #141414;
-  --text-color: #cccccc;
-  --text-color-2: #fff;
-  --highlight-color-1: #9b9bff;
-  --highlight-color-2: #61dfff;
-  --gradient-1: linear-gradient(to top, #948984, #b4aca4);
+  --background-color: #2e4045; /* Dark aqua */
+  --text-color-1: #a4d3ca; /* Light aqua */
+  --text-color-2: #b2f1e4; /* Forest green */
+  --highlight-color-1: #68afa0; /* Muted aqua */
+  --highlight-color-2: #4e8c87; /* Teal */
+  --gradient-1: linear-gradient(#39796b, #2c5f5b); /* Deeper aqua shades */
+}
+
+body[data-theme="dark"][data-color-scheme="5"] {
+  --background-color: #192734; /* Dark blue */
+  --text-color-1: #b3dffd; /* Light sky blue */
+  --text-color-2: #bfd7f3; /* Dark blue */
+  --highlight-color-1: #4e8fda; /* Medium blue */
+  --highlight-color-2: #3272b4; /* Royal blue */
+  --gradient-1: linear-gradient(#2456a6, #0d2f61); /* Richer shades of blue */
+}
+
+body[data-theme="dark"][data-color-scheme="6"] {
+  --background-color: #25494d; /* Deep teal */
+  --text-color-1: #9dc3c1; /* Soft teal */
+  --text-color-2: rgb(202, 237, 249); /* Deep teal */
+  --highlight-color-1: #5b8e90; /* Darker teal */
+  --highlight-color-2: #417b7a; /* Teal green */
+  --gradient-1: linear-gradient(#00695c, #004d40); /* Darkest shades of teal */
+}
+
+body[data-theme="dark"][data-color-scheme="7"] {
+  --background-color: #285b5c; /* Deep aqua */
+  --text-color-1: #90c8c1; /* Light aqua */
+  --text-color-2: #ecbfcc; /* Deep cyan */
+  --highlight-color-1: #3d7978; /* Muted aqua */
+  --highlight-color-2: #5a9997; /* Sea green */
+  --gradient-1: linear-gradient(#316b6e, #204e52); /* Darker green to aqua */
+}
+
+body[data-theme="dark"][data-color-scheme="8"] {
+  --background-color: #2a5349; /* Deep green */
+  --text-color-1: #c6dec1; /* Pale green */
+  --text-color-2: #cedeea; /* Jungle green */
+  --highlight-color-1: #709c8b; /* Dark mint */
+  --highlight-color-2: #467d65; /* Dark emerald */
+  --gradient-1: linear-gradient(
+    #3c6b58,
+    #244d3c
+  ); /* From forest to dark green */
+}
+
+body[data-theme="dark"][data-color-scheme="9"] {
+  --background-color: #342a3b; /* Dark purple */
+  --text-color-1: #e2d1e3; /* Soft lavender */
+  --text-color-2: #ddcfbb; /* Dark purple */
+  --highlight-color-1: #936aa7; /* Darker purple */
+  --highlight-color-2: #714485; /* Deep purple */
+  --gradient-1: linear-gradient(
+    #5a3968,
+    #421e4e
+  ); /* From dark to deeper purple */
 }
 
 body {

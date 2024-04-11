@@ -18,7 +18,10 @@ const HomePage = () => {
         <div className="module module1">Module 1</div>
         <div className="module module2">Module 2</div>
       </div>
-      <div className="module module3">Module 3</div>
+      <div className="module module3">
+        text content goes here so let&apos;s just type a bunch of stuff until
+        it&apos;s a little more populated.
+      </div>
       <div className="module bottomModule">
         <BrandScroll />
       </div>
