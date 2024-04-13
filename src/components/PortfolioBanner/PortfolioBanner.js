@@ -15,7 +15,11 @@ const PortfolioBanner = () => {
       const y = e.clientY - rect.top;
 
       const col = Math.floor((numCols * x) / rect.width);
-      const row = Math.floor((numRows * y) / rect.height);
+
+      // Corrective factor, adjust this based on trial and error
+      const correctiveFactor = 2.15; // Start with 1.2 and adjust as needed, can be <1 or >1
+
+      const row = Math.floor((numRows * y) / (rect.height * correctiveFactor));
 
       setHoverCell({ row, col });
     };
