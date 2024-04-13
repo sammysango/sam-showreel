@@ -7,8 +7,7 @@ const PortfolioBanner = ({ bgColor = "teal", textColor = "white" }) => {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const grid = gridRef.current;
-      const rect = grid.getBoundingClientRect();
+      const rect = gridRef.current.getBoundingClientRect();
       const numCols = 10;
       const numRows = 10;
 
@@ -21,13 +20,22 @@ const PortfolioBanner = ({ bgColor = "teal", textColor = "white" }) => {
       setHoverCell({ row, col });
     };
 
-    gridRef.current.addEventListener("mousemove", handleMouseMove);
+    const handleMouseLeave = () => {
+      setHoverCell({ row: -1, col: -1 }); // Reset on mouse leave
+    };
+
+    const grid = gridRef.current;
+    grid.addEventListener("mousemove", handleMouseMove);
+    grid.addEventListener("mouseleave", handleMouseLeave);
+
     return () => {
-      gridRef.current.removeEventListener("mousemove", handleMouseMove);
+      grid.removeEventListener("mousemove", handleMouseMove);
+      grid.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
   const calculateRadius = (row, col) => {
+    if (hoverCell.row === -1 && hoverCell.col === -1) return 0; // Return to default when mouse is not over the grid
     const dx = Math.abs(hoverCell.col - col);
     const dy = Math.abs(hoverCell.row - row);
     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -38,9 +46,7 @@ const PortfolioBanner = ({ bgColor = "teal", textColor = "white" }) => {
 
   return (
     <div className={styles.banner} ref={gridRef} style={{ color: textColor }}>
-      <div className={styles.title} style={{ color: textColor }}>
-        PORTFOLIO
-      </div>
+      <div className={styles.title} style={{ color: textColor }}>PORTFOLIO</div>
       <div className={styles.grid}>
         {Array.from({ length: 100 }).map((_, index) => {
           const row = Math.floor(index / 10);
@@ -56,7 +62,6 @@ const PortfolioBanner = ({ bgColor = "teal", textColor = "white" }) => {
         })}
       </div>
       <div className={styles.arrowContainer}>
-        {/* Ensure SVG is visible for debugging */}
         <svg
           className={styles.arrowSvg}
           xmlns="http://www.w3.org/2000/svg"
