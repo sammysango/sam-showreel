@@ -1,0 +1,35 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--highlight-color-2);
+}
+
+.title {
+  position: absolute;
+  z-index: 2;
+  font-size: 200px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--highlight-color-2);
+}
+
+.square {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Keeps squares 1:1 aspect ratio */
+  transition: border-radius 0.2s; /* Quick transition for more responsiveness */
+  background-color: var(--highlight-color-1) !important;
+}
