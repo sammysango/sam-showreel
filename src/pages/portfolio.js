@@ -1,10 +1,11 @@
 import React from "react";
+import "./portfolio.css";
+import PortfolioBanner from "../components/PortfolioBanner/PortfolioBanner";
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Portfolio Page</h1>
-      <p>This is the Portfolio Page. My work will appear here.</p>
+      <PortfolioBanner />
     </div>
   );
 };
