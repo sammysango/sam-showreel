@@ -46,7 +46,9 @@ const PortfolioBanner = ({ bgColor = "teal", textColor = "white" }) => {
 
   return (
     <div className={styles.banner} ref={gridRef} style={{ color: textColor }}>
-      <div className={styles.title} style={{ color: textColor }}>PORTFOLIO</div>
+      <div className={styles.title} style={{ color: textColor }}>
+        PORTFOLIO
+      </div>
       <div className={styles.grid}>
         {Array.from({ length: 100 }).map((_, index) => {
           const row = Math.floor(index / 10);
