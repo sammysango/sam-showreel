@@ -4,33 +4,75 @@ import styles from "./styles.module.css";
 const PortfolioBanner = () => {
   const gridRef = useRef(null);
   const [hoverCell, setHoverCell] = useState({ row: -1, col: -1 });
+  const [rippleCells, setRippleCells] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+  const numCols = 10; // Define grid dimensions
+  const numRows = 10;
+
+  // Adjustable constants
+  const initialDelay = 1500; // Initial delay before the first ripple in milliseconds
+  const repeatInterval = 5000; // Interval to repeat the ripple effect in milliseconds
+  const ripplePropagationSpeed = 150; // Speed of ripple propagation down the column in milliseconds
+  const rippleEffectDuration = 300; // Duration ripple effect stays on each cell in milliseconds
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const rect = gridRef.current.getBoundingClientRect();
-      const numCols = 10;
-      const numRows = 10;
+    let moveTimer = null;
 
+    const handleMouseMove = (e) => {
+      setIsActive(true);
+      const rect = gridRef.current.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-
+      const correctiveFactor = 2.15;
       const col = Math.floor((numCols * x) / rect.width);
-
-      // Corrective factor, adjust this based on trial and error
-      const correctiveFactor = 2.15; // Start with 1.2 and adjust as needed, can be <1 or >1
-
       const row = Math.floor((numRows * y) / (rect.height * correctiveFactor));
-
       setHoverCell({ row, col });
+      clearTimeout(moveTimer);
+      moveTimer = setTimeout(() => {
+        setIsActive(false);
+        setHoverCell({ row: -1, col: -1 });
+      }, 50);
     };
 
     const handleMouseLeave = () => {
-      setHoverCell({ row: -1, col: -1 }); // Reset on mouse leave
+      clearTimeout(moveTimer);
+      setIsActive(false);
+      setHoverCell({ row: -1, col: -1 });
     };
 
     const grid = gridRef.current;
     grid.addEventListener("mousemove", handleMouseMove);
     grid.addEventListener("mouseleave", handleMouseLeave);
+
+    // Function to start ripples
+    const startRipples = () => {
+      for (let col = 0; col < numCols; col++) {
+        setTimeout(
+          () => {
+            for (let row = 0; row < numRows; row++) {
+              setTimeout(() => {
+                setRippleCells((current) => [...current, { col, row }]);
+                setTimeout(() => {
+                  // Remove the ripple effect after the duration
+                  setRippleCells((current) =>
+                    current.filter(
+                      (cell) => !(cell.col === col && cell.row === row),
+                    ),
+                  );
+                }, rippleEffectDuration);
+              }, row * ripplePropagationSpeed);
+            }
+          },
+          (col * ripplePropagationSpeed) / 2,
+        ); // Adjust delay between column starts
+      }
+    };
+
+    // Start repeating ripples
+    setTimeout(() => {
+      startRipples();
+      setInterval(startRipples, repeatInterval);
+    }, initialDelay);
 
     return () => {
       grid.removeEventListener("mousemove", handleMouseMove);
@@ -39,13 +81,33 @@ const PortfolioBanner = () => {
   }, []);
 
   const calculateRadius = (row, col) => {
-    if (hoverCell.row === -1 && hoverCell.col === -1) return 0; // Return to default when mouse is not over the grid
-    const dx = Math.abs(hoverCell.col - col);
-    const dy = Math.abs(hoverCell.row - row);
-    const distance = Math.sqrt(dx * dx + dy * dy);
     const maxRadiusEffect = 50;
     const effectSpread = 15;
-    return Math.max(0, maxRadiusEffect - distance * effectSpread);
+    let maxRadius = 0;
+
+    if (hoverCell && hoverCell.row !== -1) {
+      let dx = Math.abs(hoverCell.col - col);
+      let dy = Math.abs(hoverCell.row - row);
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      maxRadius = Math.max(
+        maxRadius,
+        maxRadiusEffect - distance * effectSpread,
+      );
+    }
+
+    rippleCells.forEach((ripple) => {
+      if (ripple.col === col && ripple.row === row) {
+        let dx = 0;
+        let dy = 0;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        maxRadius = Math.max(
+          maxRadius,
+          maxRadiusEffect - distance * effectSpread,
+        );
+      }
+    });
+
+    return maxRadius;
   };
 
   return (
