@@ -81,7 +81,7 @@ const PortfolioBanner = () => {
   }, []);
 
   const calculateRadius = (row, col) => {
-    const maxRadiusEffect = 50;
+    const maxRadiusEffect = 35;
     const effectSpread = 15;
     let maxRadius = 0;
 
