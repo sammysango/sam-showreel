@@ -19,7 +19,7 @@ const Navbar = () => {
     console.log("useEffect for scroll event setup is running");
     const handleScroll = () => {
       console.log("Scroll event triggered");
-      console.log(window.scrollY); // log current vertical scroll position
+      console.log(window.scrollY);
 
       if (window.scrollY > 50) {
         console.log("Setting scrolled to true");
@@ -45,7 +45,7 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", () => {
       if (window.innerWidth > 768) {
-        setIsMenuOpen(false); // Close hamburger menu on window resize when above the breakpoint.
+        setIsMenuOpen(false); // Close hamburger menu on window resize when above the breakpoint
       }
     });
 
@@ -148,6 +148,15 @@ const Navbar = () => {
             onClick={handleNavLinkClick}
           >
             Portfolio
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link
+            to="/artwork"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
+            Artwork
           </Link>
         </li>
         <li className={styles.navItem}>

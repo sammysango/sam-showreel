@@ -4,7 +4,7 @@ import PortfolioBanner from "../components/PortfolioBanner/PortfolioBanner";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="bannerContainer">
       <PortfolioBanner />
     </div>
   );

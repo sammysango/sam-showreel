@@ -59,7 +59,7 @@ img {
   margin-bottom: 30px;
 }
 
-/* Keyframes for logo scroll animation */
+/* logo scroll animation */
 @keyframes scrollLogos {
   from {
     transform: translateX(0%);

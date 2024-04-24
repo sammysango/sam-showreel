@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light"); // Light or dark
-  const [colorScheme, setColorScheme] = useState(1); // Assuming 1-4
+  const [colorScheme, setColorScheme] = useState(1);
 
   const toggleTheme = () => {
     console.log("Toggling theme");
@@ -14,7 +14,7 @@ export const ThemeProvider = ({ children }) => {
 
   const nextColorScheme = () => {
     console.log("Cycling color schemes");
-    setColorScheme((current) => (current === 9 ? 1 : current + 1)); // Cycle through 1-4
+    setColorScheme((current) => (current === 9 ? 1 : current + 1)); // Cycle through schemes
   };
 
   return (

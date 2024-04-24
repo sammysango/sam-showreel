@@ -1,41 +1,30 @@
 .footer {
   background-color: var(--background-color);
-  /* Set background color */
   color: var(--text-color);
-  /* Set text color */
   text-align: center;
-  /* Center text */
   padding: 20px 0;
-  /* Add space above and below the text */
   font-weight: bold;
-  /* Make the text bold */
 }
 
 .footer p {
   margin-bottom: 20px;
-  /* Space above the placeholder squares */
 }
 
 .footer a {
   color: var(--text-color);
-  /* This sets the text color of links */
   text-decoration: none;
-  /* Optional: Removes underline from links */
 }
 
 .iconContainer {
   display: flex;
   justify-content: center;
   gap: 25px;
-  /* Adjust the space between icons as needed */
   margin: 20px 0;
 }
 
 .socialIcon {
   fill: currentColor;
-  /* Ensure icons inherit the text color */
   width: 30px;
-  /* Adjust based on your design */
   height: 30px;
   transition: scale 0.1s ease-in-out;
 }

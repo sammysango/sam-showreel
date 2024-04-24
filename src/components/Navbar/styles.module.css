@@ -41,7 +41,7 @@ body {
 }
 
 .navItem {
-  margin: 0 35px; /* Adjust as needed to space out the links */
+  margin: 0 35px; /* Adjust to space out links */
   transition:
     margin 0.3s ease,
     scale 0.15s ease;
@@ -76,7 +76,7 @@ body {
   transition: padding 0.3s ease-in-out;
 }
 
-/* Adjustments for placeholders and button */
+/* Adjustments for icons and button */
 .navbarIcon,
 .actionButton {
   display: inline-block;
@@ -236,7 +236,7 @@ body {
     color: var(--text-color);
   }
 
-  /* Hide the nav list initially on mobile */
+  /* Hide nav list initially on mobile */
   .navList {
     display: flex;
     flex-direction: column;
@@ -255,7 +255,7 @@ body {
     pointer-events: none;
   }
 
-  /* Show the nav list when hamburger menu is active */
+  /* Show nav list when hamburger menu is active */
   .navbar.active .navList {
     opacity: 1;
     transform: translateY(0);
