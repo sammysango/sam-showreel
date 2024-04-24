@@ -125,7 +125,9 @@ const Navbar = () => {
           </g>
         </svg>
       </div>
-      <span className={styles.brandName}>Sam Sanger</span>
+      <span className={styles.brandName}>
+        <Link to="/" onClick={handleNavLinkClick}>Sam Sanger</Link>
+      </span>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
           <Link to="/" className={styles.navLink} onClick={handleNavLinkClick}>
@@ -148,6 +150,15 @@ const Navbar = () => {
             onClick={handleNavLinkClick}
           >
             Portfolio
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link
+            to="/artwork"
+            className={styles.navLink}
+            onClick={handleNavLinkClick}
+          >
+            Artwork
           </Link>
         </li>
         <li className={styles.navItem}>

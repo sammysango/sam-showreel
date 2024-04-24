@@ -8,6 +8,7 @@ import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import PortfolioPage from "./pages/portfolio";
 import ContactPage from "./pages/contact";
+import ArtworkPage from "./pages/artwork";
 
 const App = () => {
   const { theme, colorScheme } = useTheme();
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/Artwork" element={<ArtworkPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
