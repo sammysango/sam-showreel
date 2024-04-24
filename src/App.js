@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import "./css/style.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom"; // Import HashRouter
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { useTheme } from "./ThemeContext";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import PortfolioPage from "./pages/portfolio";
+import ArtworkPage from "./pages/artwork";
 import ContactPage from "./pages/contact";
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/artwork" element={<ArtworkPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />

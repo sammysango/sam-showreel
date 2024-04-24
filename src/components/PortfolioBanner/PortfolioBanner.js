@@ -6,14 +6,13 @@ const PortfolioBanner = () => {
   const [hoverCell, setHoverCell] = useState({ row: -1, col: -1 });
   const [rippleCells, setRippleCells] = useState([]);
   const [isActive, setIsActive] = useState(false);
-  const numCols = 10; // Define grid dimensions
+  const numCols = 10;
   const numRows = 10;
 
-  // Adjustable constants
-  const initialDelay = 1500; // Initial delay before the first ripple in milliseconds
-  const repeatInterval = 5000; // Interval to repeat the ripple effect in milliseconds
-  const ripplePropagationSpeed = 150; // Speed of ripple propagation down the column in milliseconds
-  const rippleEffectDuration = 300; // Duration ripple effect stays on each cell in milliseconds
+  const initialDelay = 1500; // delay before the first ripple
+  const repeatInterval = 5000; // Interval to repeat ripple
+  const ripplePropagationSpeed = 150; // Speed of ripple propagation
+  const rippleEffectDuration = 300; // Duration ripple effect stays on each cell
 
   useEffect(() => {
     let moveTimer = null;
@@ -44,7 +43,6 @@ const PortfolioBanner = () => {
     grid.addEventListener("mousemove", handleMouseMove);
     grid.addEventListener("mouseleave", handleMouseLeave);
 
-    // Function to start ripples
     const startRipples = () => {
       for (let col = 0; col < numCols; col++) {
         setTimeout(
@@ -53,7 +51,6 @@ const PortfolioBanner = () => {
               setTimeout(() => {
                 setRippleCells((current) => [...current, { col, row }]);
                 setTimeout(() => {
-                  // Remove the ripple effect after the duration
                   setRippleCells((current) =>
                     current.filter(
                       (cell) => !(cell.col === col && cell.row === row),

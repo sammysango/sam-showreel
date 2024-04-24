@@ -22,12 +22,12 @@
   box-sizing: border-box;
   border: 1px solid var(--text-color);
   resize: vertical;
-  border-radius: 999px;
+  border-radius: 15px;
 }
 
 .formGroup textarea {
   min-height: 8rem;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .submitButton {

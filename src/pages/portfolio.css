@@ -1,1 +1,4 @@
-/* placeholder css for portfolio page */
+.bannerContainer {
+  margin: 35px 60px;
+  border-radius: 999px;
+}

@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* Adjust the gap between dots */
+  gap: 15px; /* Adjust gap between dots */
 }
 
 .controls .dot,
