@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 const CustomPDFViewer = ({ file }) => {
     const basePath = window.location.hostname.includes('github.io') ? '/sam-showreel' : '';
-
+    
     return (
         <div className={styles.viewerContainer}>
             <Worker workerUrl={`${basePath}/pdf.worker.min.js`}>
