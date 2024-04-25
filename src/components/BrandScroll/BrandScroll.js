@@ -32,7 +32,7 @@ const logos = [
 const BrandScroll = () => {
   return (
     <div className={styles.brandScrollContainer}>
-      <h2 className={styles.heading}>Worked & Collaborated With:</h2>
+      <h2 className={styles.heading}>Worked with / work appeared on:</h2>
       <div className={styles.scrollContainer}>
         <div className={styles.logoScroll}>
           {logos.map((logo, index) => (

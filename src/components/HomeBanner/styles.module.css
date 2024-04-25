@@ -84,14 +84,14 @@
 
 .decorativeCircle {
   position: absolute;
-  top: 50%; /* Center vertically relative to its parent */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
-  width: var(--circle-size, 190px); /* Diameter of the circle */
-  height: var(--circle-size, 190px); /* Diameter of the circle */
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--circle-size, 190px);
+  height: var(--circle-size, 190px);
   background-color: var(--text-color-2);
-  border-radius: 50%; /* Makes it a circle */
-  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Glow effect */
-  transform: translate(-55%, calc(-50% + var(--circle-offset-y, -10px)));
-  z-index: 1; /* Below the image */
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+  transform: translate(-55%, calc(-50% + var(--circle-offset-y, -10px))); /* adjust circle position */
+  z-index: 1;
 }
