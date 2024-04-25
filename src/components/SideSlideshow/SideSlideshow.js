@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import img1 from "../../assets/placeholder1.webp";
-import img2 from "../../assets/placeholder2.webp";
-import img3 from "../../assets/placeholder3.webp";
+import img1 from "../../assets/placeholder1.png";
+import img2 from "../../assets/placeholder2.png";
+import img3 from "../../assets/placeholder3.png";
 
 const slideImages = [img1, img2, img3];
 
@@ -17,7 +17,7 @@ const SideSlideshow = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slideImages.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); // slide speed
 
     return () => clearInterval(timer);
   }, []);
