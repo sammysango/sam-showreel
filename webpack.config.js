@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin"); // Import the plugin
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -49,7 +49,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "public/pdf.worker.min.js", to: "" }
+        { from: "public/pdf.worker.min.js", to: "" },
+        { from: "public/sam-sanger-cv-draft.pdf", to: "" }
       ],
     }),
   ],
