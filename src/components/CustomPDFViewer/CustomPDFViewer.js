@@ -1,11 +1,10 @@
 import React from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css'; // Import viewer styles
-import styles from './styles.module.css'; // Import your custom styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import styles from './styles.module.css';
 
 const CustomPDFViewer = ({ file }) => {
-    // Check if the URL includes 'github.io' and prepend the repository name if it does
-    const basePath = window.location.hostname.includes('github.io') ? '/your-repository-name' : '';
+    const basePath = window.location.hostname.includes('github.io') ? '/sam-showreel' : '';
 
     return (
         <div className={styles.viewerContainer}>
