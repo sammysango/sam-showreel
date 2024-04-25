@@ -17,7 +17,7 @@ const SideSlideshow = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slideImages.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); // slide speed
 
     return () => clearInterval(timer);
   }, []);
