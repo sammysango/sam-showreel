@@ -1,10 +1,10 @@
 import React from "react";
+import CustomPDFViewer from "../components/CustomPDFViewer/CustomPDFViewer";
 
 const AboutPage = () => {
   return (
     <div>
-      <h1>About Page</h1>
-      <p>TBC</p>
+      <CustomPDFViewer file="/sam-sanger-cv-draft.pdf" />
     </div>
   );
 };
