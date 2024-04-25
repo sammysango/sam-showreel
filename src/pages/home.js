@@ -7,7 +7,7 @@ import BrandScroll from "../components/BrandScroll/BrandScroll";
 const HomePage = () => {
   return (
     <div className="homepage">
-      <div className="module feature">Side Module</div>
+      <div className="module feature">Featured Work Stream</div>
       <div className="module banner">
         <BannerComponent />
       </div>
@@ -19,7 +19,8 @@ const HomePage = () => {
         <div className="module module2">Module 2</div>
       </div>
       <div className="module module3">
-        Module 3
+        text content goes here so let&apos;s just type a bunch of stuff until
+        it&apos;s a little more populated.
       </div>
       <div className="module bottomModule">
         <BrandScroll />

@@ -9,7 +9,7 @@ import image4 from "../../assets/gallery-images/4.jpg";
 import image5 from "../../assets/gallery-images/5.jpg";
 import image6 from "../../assets/gallery-images/6.jpg";
 import image7 from "../../assets/gallery-images/7.jpg";
-// import image8 from "../../assets/gallery-images/8.jpg";
+import image8 from "../../assets/gallery-images/8.jpg";
 import image9 from "../../assets/gallery-images/9.jpg";
 import image10 from "../../assets/gallery-images/10.jpg";
 import image11 from "../../assets/gallery-images/11.jpg";
@@ -36,7 +36,7 @@ const images = [
   image5,
   image6,
   image7,
-//  image8,
+  image8,
   image9,
   image10,
   image11,
