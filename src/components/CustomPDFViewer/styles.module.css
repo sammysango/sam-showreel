@@ -1,0 +1,13 @@
+:root {
+    --rpv-core__inner-page-background-color: var(--page-background);
+}
+
+.viewerContainer {
+    height: 750px;
+    width: 100%;
+    background-color: var(--page-background);
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
