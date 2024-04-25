@@ -21,6 +21,9 @@ body {
 }
 
 .feature {
+  color: var(--text-color-2);
+  font-weight: 700;
+  font-size: 1.2rem;
   grid-column: 1 / 2;
   grid-row: 1 / -1;
   background-color: var(--highlight-color-1);
@@ -56,6 +59,9 @@ body {
 
 .module1,
 .module2 {
+  color: var(--text-color-2);
+  font-weight: 700;
+  font-size: 1.2rem;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -65,6 +71,9 @@ body {
 }
 
 .module3 {
+  color: var(--text-color-2);
+  font-weight: 700;
+  font-size: 1.2rem;
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   border-radius: 25px;
