@@ -18,9 +18,7 @@ const HomePage = () => {
         <div className="module module1">Module 1</div>
         <div className="module module2">Module 2</div>
       </div>
-      <div className="module module3">
-        Module 3
-      </div>
+      <div className="module module3">Module 3</div>
       <div className="module bottomModule">
         <BrandScroll />
       </div>

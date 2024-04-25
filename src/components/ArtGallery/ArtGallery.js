@@ -36,7 +36,7 @@ const images = [
   image5,
   image6,
   image7,
-//  image8,
+  //  image8,
   image9,
   image10,
   image11,

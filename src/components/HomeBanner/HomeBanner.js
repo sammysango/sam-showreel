@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-import Headshot from '../../assets/headshot/sam-sanger-headshot-1.png';
+import Headshot from "../../assets/headshot/sam-sanger-headshot-1.png";
 
 const svgTitleCode = `
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 541.312 75.346">

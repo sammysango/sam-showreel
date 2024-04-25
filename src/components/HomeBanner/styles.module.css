@@ -92,6 +92,9 @@
   background-color: var(--text-color-2);
   border-radius: 50%;
   box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
-  transform: translate(-55%, calc(-50% + var(--circle-offset-y, -10px))); /* adjust circle position */
+  transform: translate(
+    -55%,
+    calc(-50% + var(--circle-offset-y, -10px))
+  ); /* adjust circle position */
   z-index: 1;
 }
